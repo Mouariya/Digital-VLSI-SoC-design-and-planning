@@ -24,6 +24,12 @@ Here SDRAM is an external component that we have shown in the block diagram and 
 
 ![Screenshot 2024-12-14 204127](https://github.com/user-attachments/assets/ac569f40-3854-48b6-9c61-04abc24041b0)
 
+This is called package, this is one of the package that we have in the market, there multiples pins available in the package that all are driven by the aurdino board
+
+## This is how all pins are connected to the chip
+
+
+
 
 
 
