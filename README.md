@@ -18,9 +18,10 @@ The picture shown below is an aurdino board, the chip circled is the picture is 
 
 ![Screenshot 2024-12-14 201734](https://github.com/user-attachments/assets/be7dfb3f-85cc-4cd7-9811-588259a32674)
 
-Here SDRAM is an external component that we have shown in the block diagram and remaining all blocks are from aurdino board  
+Here SDRAM is an external component that we have shown in the block diagram and remaining all blocks are from aurdino board and the rectangle block is nothing, but processor/SoC that has been circled in the actual aurdino board 
 
 ## This is how Processor/SoC looks likes inside 
+
 
 
 
