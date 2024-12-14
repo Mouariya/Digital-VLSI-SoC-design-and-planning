@@ -48,6 +48,12 @@ These threads like wires are called wire bonds, these are used to connect the pa
 
  **CORE** :- Core is the central area of the chip that are used to place the different logic blocks.
 
+ ![Screenshot 2024-12-15 022809](https://github.com/user-attachments/assets/9d22c573-e143-40cd-8313-68c27a3b7a03)
+
+**Foundary IP's** :- Foundry IPs (Intellectual Properties) refer to pre-designed, verified, and reusable circuit blocks or modules provided by semiconductor foundries for use in integrated circuit (IC) design. These IPs are typically optimized for the specific manufacturing processes of the foundry, allowing IC designers to incorporate them into their designs without needing to develop certain functionalities from scratch.
+
+**Macros** :- Macros are somthing which is a pure digital circuit logic blocks that are there inside the chip.
+
 
  
 
