@@ -36,6 +36,19 @@ These threads like wires are called wire bonds, these are used to connect the pa
 
  **Let's See**
 
+ ![Screenshot 2024-12-15 011621](https://github.com/user-attachments/assets/da6f1665-e592-478d-896f-db1755fc7c68)
+
+ Inside of the chip there are many components available, some important components are given below
+
+ **PADS** :- PADS are somthing through which any signal comes inside the chip and vice-versa
+
+
+ **DIE** :- Dies are the square/rectangular shape area that are manufactured on silicon wafer, and later on we implement the different logic blocks on these DIES
+ 
+
+ **CORE** :- Core is the central area of the chip that are used to place the different logic blocks.
+
+
  
 
 
