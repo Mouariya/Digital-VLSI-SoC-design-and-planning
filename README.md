@@ -11,3 +11,5 @@
 The picture shown below is an aurdino board, the chip circled is the picture is chip that we will be learning about, this chip is a small component of the aurdino board, but it takes lots of intellegence to design it.
 
 ![ordino board](https://github.com/user-attachments/assets/c3c04add-854b-4d81-a32f-a31f3e6dc102)
+
+**Block Diagram of Above Aurdino Board**
