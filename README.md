@@ -28,6 +28,17 @@ This is called package, this is one of the package that we have in the market, t
 
 ## This is how all pins are connected to the chip
 
+![Screenshot 2024-12-15 010435](https://github.com/user-attachments/assets/c0de9e63-c966-499c-a31f-ba019d1e3f65)
+
+These threads like wires are called wire bonds, these are used to connect the package to pins of the chip, and in this way we transfer the signals that are coming from the outer world to the proccessor 
+
+## If we open the chip how it will look like ?
+
+ **Let's See**
+
+ 
+
+
 
 
 
