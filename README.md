@@ -30,3 +30,4 @@ Here SDRAM is an external component that we have shown in the block diagram and 
 
 
 
+
