@@ -57,7 +57,17 @@ These threads like wires are called wire bonds, these are used to connect the pa
 
 ## Introduction to RISC-V:-    
 
-This is nothing but the language of the computer, this is the way we are going to talk with the computer  
+This is nothing but the language of the computer, this is the way we are going to talk with the computer.
+
+**Ex:-** If we want to run the C- program to specific hardware then there is certain flow through which it has to pass through as given below. That C-level program is first compile into assembly language program, which is nothing but the RISC-V assembly language program.
+
+![Screenshot 2024-12-15 123842](https://github.com/user-attachments/assets/449dd6d7-a501-47cf-a3f3-ae43a3b6c5ce)
+
+
+## From Software Applications to Hardware:-
+
+
+
 
 
  
