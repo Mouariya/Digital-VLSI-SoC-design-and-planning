@@ -210,6 +210,16 @@ To address this issue, we have to limit the lenght of the wire. usually this is 
 With OpenLANE, we took a preventive approach. here we add fake antenna diode next to every cell input after placement. Then run the Antenna checker on the routed layout. If the checker reports a violation on cell input pin, replace the fake diode cell by a real one.
 
 
+![Screenshot 2024-12-15 234902](https://github.com/user-attachments/assets/6d7ccb14-f16c-4eb6-9f88-ba691580dc33)
+
+
+**Static Timing analysis(STA)**:- It involves the interconnect RC Extraction(DEF2SPEF) from the routed layout, followed by STA on OpenSTA(OpenROAD) tool. resulting report will shows the timing violations if any violations is there.
+
+**Physical Verification (DRC and LVS)**:- Magic is used for design Rules checking and SPICE Extraction from Layout. Magic and Netgen are used for LVS.
+
+
+
+
  
 
   
