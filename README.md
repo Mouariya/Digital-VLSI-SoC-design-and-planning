@@ -75,7 +75,34 @@ The major components of system softwares are **Operating system (OS), Compiler, 
 
 **Compiler** :- Compiler converts the different types of programs written in different languages into the set of instructions, now these set of instructions are specific to the hardware that we are using, for example if given hardware belongs to ARM then set of instructions will be in ARM format.
 
-**Assembler** :- Once complier is converted the different program into set of instructions then job of assembler is to convert these set of instruction into binary language or machine level language. Now these binary language is given to the hardware and it gives output as per its function and input.
+**Assembler** :- Once complier is converted the different program into set of instructions then job of assembler is to convert these set of instructions into binary language or machine level language. Now these binary language is given to the hardware and it gives output as per its function and input.
+
+
+##  (b) SoC Design and OpenLANE 
+
+# Introduction to all open-source digital asic design
+
+  For digital ASIC design we need **RTL IP's**, **EDA Tools**, **PDK DATA** all these things we need from the day one.
+
+  **What is RTL IP's** :- RTL stands for "Register Transfer Level" At the RTL level, a circuit is modeled as a combination of registers (which store data) and combinational logic (which processes data). RTL is often used during the design and simulation of digital circuits before they are synthesized into a lower-level gate or transistor implementation.
+
+  *Open Source for RTL IP's*: librecores.org, opencores.org, github.com etc
+
+  **What is EDA Tools** :- EDA tools (Electronic Design Automation tools) refer to a set of software applications that are used to design, verify, and simulate electronic systems, including integrated circuits (ICs) and printed circuit boards (PCBs). These tools help automate and optimize various stages of the electronics design process, from concept and architecture through to detailed design, verification, and final production.
+
+  *Open Source for EDA Tools*:  Qflow, OpenROAD, OpenLANE etc.
+
+
+**What is PDK Data** :- Collection of files used to model a fabrication process for the EDA tools used to design an IC 
+
+*Process Design Rules*: DRC,LVS,PEX
+*Device Models*
+*Digital standard cell libraries*
+*I/O Libraries*
+
+*Open Source for PDK Data*:  github.com/google/skywater-pdk
+
+## Simplified RTL2GDS Flow
 
 
 
