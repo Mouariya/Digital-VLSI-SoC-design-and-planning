@@ -138,6 +138,18 @@ Clock nets Power/Ground nets The sky130 PDK defines the 6 routing leyers. the lo
 
 **Detailed Routing**: Uses the routing guides to implement the actual wiring.
 
+![Screenshot 2024-12-15 194312](https://github.com/user-attachments/assets/e7a11ae6-fbef-43c2-b1f9-bd7c01aefcbb)
+
+**(6)Sign off**:- Once done with routing, we can construct the final layout which undergoes physical verifications and time verifications.
+
+**Physical Verifications**: Design Rules Checking (DRC), Layout vs Schematics (LVC)
+
+  **Time verifications**: Static time analysis (STA)
+  
+
+
+
+
 
 
 
