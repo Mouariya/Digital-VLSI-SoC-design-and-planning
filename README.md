@@ -156,6 +156,25 @@ The goal of OpenLANE is to make it easier for engineers, researchers, and studen
 
  **Strive SoC Family**
 
+![Screenshot 2024-12-15 230526](https://github.com/user-attachments/assets/a321a130-4ef8-4a9a-9743-93ac8ade0d60)
+
+
+The main goal of OPENLANE is to produce a clean GDSII with no human intervation (no-human-in-the-loop). here the meaning of clean is that:
+
+No LVS violations
+
+No DRC Violations
+
+No timing Violations
+
+OPENLANE is tuned for skyWter130nm open PDK. it can be used to harden Macros and chips.there is two mode of operation Autonomus : it is the push botton flow. with the push botton , it is a some time base design and due to this push botton, we get final GDSII
+
+interactive : here we can run comamds and steps one by one.
+
+It has large number of design examples(43 designs with their best configurations).
+
+## Introduction to OpenLANE detailed ASIC design flow 
+
  
 
   
