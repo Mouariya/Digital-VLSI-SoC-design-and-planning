@@ -145,6 +145,19 @@ Clock nets Power/Ground nets The sky130 PDK defines the 6 routing leyers. the lo
 **Physical Verifications**: Design Rules Checking (DRC), Layout vs Schematics (LVC)
 
   **Time verifications**: Static time analysis (STA)
+
+
+  ## Introduction to OpenLANE and Strive chipset :- 
+
+  OpenLANE is an open-source end-to-end digital ASIC (Application-Specific Integrated Circuit) design flow that leverages multiple tools in the open-source domain to automate and streamline the process of designing integrated circuits (ICs). Developed by Efabless, it integrates various tools from the open-source Electronic Design Automation (EDA) ecosystem to offer a complete workflow for chip design. It is particularly focused on RTL-to-GDSII flow, where the high-level RTL (Register Transfer Level) description of a circuit is converted into a physical layout ready for fabrication.
+
+The goal of OpenLANE is to make it easier for engineers, researchers, and students to create designs, perform optimizations, and generate layouts that can be physically manufactured. The platform supports various design stages such as synthesis, placement, routing, and verification, ensuring compatibility with the SkyWater 130nm process node.
+
+
+ **Strive SoC Family**
+
+ 
+
   
 
 
