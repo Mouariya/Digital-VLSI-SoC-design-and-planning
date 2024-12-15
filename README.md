@@ -55,6 +55,11 @@ These threads like wires are called wire bonds, these are used to connect the pa
 **Macros** :- Macros are somthing which is a pure digital circuit logic blocks that are there inside the chip.
 
 
+## Introduction to RISC-V:-    
+
+This is nothing but the language of the computer, this is the way we are going to talk with the computer  
+
+
  
 
 
