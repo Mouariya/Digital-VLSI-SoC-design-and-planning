@@ -66,6 +66,17 @@ This is nothing but the language of the computer, this is the way we are going t
 
 ## From Software Applications to Hardware:-
 
+![Screenshot 2024-12-15 131105](https://github.com/user-attachments/assets/10801c99-495b-4abd-ad6c-65d04f69b77c)
+
+So here applications runs on the hardware of the our computer with the help of the intermediate stage "system software". So here application program enters into the system software and then system software interns converts the application program into binary language. 
+The major components of system softwares are **Operating system (OS), Compiler, Assembler** 
+
+**Operating System** :- It performs multiples job like, it handles input-output operations, it allocates memory , it manages low level memory functions. Other than this it converts the application program into assembly language program and then binary language program, so that it is to be understood by hardware.
+
+**Compiler** :- Compiler converts the different types of programs written in different languages into the set of instructions, now these set of instructions are specific to the hardware that we are using, for example if given hardware belongs to ARM then set of instructions will be in ARM format.
+
+**Assembler** :- Once complier is converted the different program into set of instructions then job of assembler is to convert these set of instruction into binary language or machine level language. Now these binary language is given to the hardware and it gives output as per its function and input.
+
 
 
 
