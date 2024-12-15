@@ -205,6 +205,10 @@ To address this issue, we have to limit the lenght of the wire. usually this is 
 
 
 
+![Screenshot 2024-12-15 234643](https://github.com/user-attachments/assets/ac137da0-ffd2-4c9d-b118-54fa55464563)
+
+With OpenLANE, we took a preventive approach. here we add fake antenna diode next to every cell input after placement. Then run the Antenna checker on the routed layout. If the checker reports a violation on cell input pin, replace the fake diode cell by a real one.
+
 
  
 
