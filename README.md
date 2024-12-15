@@ -175,6 +175,31 @@ It has large number of design examples(43 designs with their best configurations
 
 ## Introduction to OpenLANE detailed ASIC design flow 
 
+![Screenshot 2024-12-15 231944](https://github.com/user-attachments/assets/732a4090-e337-4871-912e-29c635b40a58
+
+The design exploration utility is also used for regression testing(CI). we run OpenLANE on ~ 70 designs and compare the results to the best known ones.
+
+DFT(Design for Test) it perform scan inserption, automatic test pattern generation, Test patterns compaction, Fault coverage, Fault simulation.After that physical implementation is done by OpenROAD app. physical implementation involves the several steps:
+
+Floor/Power Planning
+
+End Decoupling Capacitors and Tap cells insertion
+
+Placements: Global and Detailed
+
+Post Placement Optimization
+
+Clock Tree synthesis (CTS)
+
+Routing: Global and Detailed
+
+**Dealing with Antenna rules violation**
+
+Every time the netlist is modified.(CTS modifies the netlist and Post Placements optimization also modifies the netlist).so for that verification must be performed. The LCE(yosys) is used to formally confirm that the function did not change after modifying the netlist. ### Dealing with antenna rules Violation: when a metal wire segment is fabricated, it can act as antenna.as an antenna, it collect charges which can demaged the transister gates during the fabrication.
+
+
+
+
  
 
   
