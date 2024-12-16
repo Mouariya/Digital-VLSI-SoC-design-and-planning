@@ -266,6 +266,17 @@ Now, in openlane, we are going to run the synthesis, but before synthesis, we ha
 
  ![openlane1](https://github.com/user-attachments/assets/f122a583-a970-4847-a287-14e7aae19108)
 
+ Here in the above screenshoot we can see that from preparation start to completion all the steps are completed 
+
+ # Review files after design prep and run synthesis
+
+ After completing the preparation, in the picorv32a file, the run terictory is created. Inside the folder, Today's date is created. so in this terictory some folders are available which is required for openlane.
+
+In the temp file, merged.lef file is available which was created in preparation time. if we open this merged.lef file, we get all the wire or layer level and cell level information.
+
+
+ 
+
 
   
 
