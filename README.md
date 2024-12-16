@@ -257,6 +257,11 @@ Now, if we are going into the design folder in openlane, there are nearly 30-40 
 
 
 
+![openlane2](https://github.com/user-attachments/assets/56d77755-6f72-4c0d-a001-f291eb72876d)
+
+Here we can see that the time period is set to the 5.00 nsec. but is we see in the openlane sky130_fd_sc_hd folder, the period is set about 24 nsec. so it is not override to the main file. If it override then give first priority to the main folder.
+
+Now, in openlane, we are going to run the synthesis, but before synthesis, we have to prepare design setup stage. for that command is  prep -design picorv32a
 
 
  
