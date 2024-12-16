@@ -289,7 +289,22 @@ Now coming to the openlane, we are going to run the synthesis. for that command 
 
 
  
+![openlane5](https://github.com/user-attachments/assets/6c715807-64ef-4711-a027-55d9237a7b98)
 
+
+From the above synthesis we can see that 
+
+ Number of flip flop = 1613  
+
+
+ Number of  cell = 14876
+
+
+ So Flop Ratio = [Number of Flip Flop / Number of cell]*100 = [1613]/[14876] *100 = 10.84%
+
+ Before we had ran the synthesis we had seen these folders were empty, now once synthesis is done, we can see that these folders are now full
+
+ 
 
   
 
