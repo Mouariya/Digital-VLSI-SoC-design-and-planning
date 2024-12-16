@@ -282,6 +282,12 @@ now here also one config.tcl file is available similar like design folder. But t
 when we make some change in the origional configuration and then we run, for example if we make a change in core utilization in the floorplanning and then we run the floorplanning, at this time in the congig.tcl file, the core utility will change and by cross checking it we can check that the modification is reflected in the exicution or not.
 
 Now coming to the openlane, we are going to run the synthesis. for that command is run_synthesis It will take some 3-4 mnts to run the synthesis and finally synthesis will complited.
+![openlane4](https://github.com/user-attachments/assets/06b8ed2a-1e87-490a-912f-91f66b1a497b)
+
+# Steps to characterize synthesis results
+
+
+
  
 
 
