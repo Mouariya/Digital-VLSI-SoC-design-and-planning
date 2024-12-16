@@ -244,6 +244,11 @@ Sky130_fd_sc_hd varient contains many technology files like verilog, spice, tech
 
 when we enter in the OpenLANE, we have to use flow.tcl because as a name says, it will goes with the flow using the script. And by using interactive switch, we will do step by step process. without interactive switch, it will run complete flow from RTL to GDSII. Now OpenLANE is open and we can see that prompt will change now.
 
+![openlane1](https://github.com/user-attachments/assets/d645ec47-c278-4171-b0fb-bf3a0c0c337e)
+
+Now we have to input all the packages which required to run the flow.
+
+
 
 
 
