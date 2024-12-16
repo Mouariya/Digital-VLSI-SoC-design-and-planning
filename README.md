@@ -264,7 +264,8 @@ Here we can see that the time period is set to the 5.00 nsec. but is we see in t
 Now, in openlane, we are going to run the synthesis, but before synthesis, we have to prepare design setup stage. for that command is  prep -design picorv32a
 
 
- 
+ ![openlane1](https://github.com/user-attachments/assets/f122a583-a970-4847-a287-14e7aae19108)
+
 
   
 
