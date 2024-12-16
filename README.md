@@ -175,7 +175,7 @@ It has large number of design examples(43 designs with their best configurations
 
 ## Introduction to OpenLANE detailed ASIC design flow 
 
-![Screenshot 2024-12-15 231944](https://github.com/user-attachments/assets/732a4090-e337-4871-912e-29c635b40a58
+
 
 The design exploration utility is also used for regression testing(CI). we run OpenLANE on ~ 70 designs and compare the results to the best known ones.
 
