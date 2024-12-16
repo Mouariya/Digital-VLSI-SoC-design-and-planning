@@ -240,6 +240,11 @@ Here we are working in Sky130_fd_sc_hd PDK varient. where, "sky130" is process n
 
 Sky130_fd_sc_hd varient contains many technology files like verilog, spice, techlef, meglef,mag,gds,cdl,lib,lef,etc. (techlef file contains the layer information).
 
+# Design Preparation Step
+
+when we enter in the OpenLANE, we have to use flow.tcl because as a name says, it will goes with the flow using the script. And by using interactive switch, we will do step by step process. without interactive switch, it will run complete flow from RTL to GDSII. Now OpenLANE is open and we can see that prompt will change now.
+
+
 
 
 
