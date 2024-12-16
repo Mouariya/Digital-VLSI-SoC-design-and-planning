@@ -304,6 +304,7 @@ From the above synthesis we can see that
 
  Before we had ran the synthesis we had seen these folders were empty, now once synthesis is done, we can see that these folders are now full
 
+![openlane1](https://github.com/user-attachments/assets/fc131ca1-c44e-4936-9fc6-6b8706e95732)
 
 
 And in the report, we can see when the actual synthesis has done. and the actual statistics synthesis report is showing below, which is same as what we have seen before.
