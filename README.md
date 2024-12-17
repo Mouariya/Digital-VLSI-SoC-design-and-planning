@@ -444,6 +444,11 @@ One more thing is need to take care about is that, this pin placement area is bl
 So, floor plan is ready for Placement and Routing step.
 
 
+## Steps to run floorplan using OpenLANE
+
+Before we run floorplane we will be needed with some switches, which we can get from the openlane configuration 
+
+
 
 
 
