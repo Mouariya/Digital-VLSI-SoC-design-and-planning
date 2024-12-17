@@ -349,7 +349,19 @@ Before that will remove all the wires and bring all the flip flops and logic gat
 ![Screenshot 2024-12-17 164439](https://github.com/user-attachments/assets/159b8e09-4b85-47e6-8b6c-ac8441625f60)
 
 
+ Utilization Factor = Area occupied by netlist / Total area of the core
+   
+ lets put the dimensions we have, we get
+ 
+ Utilization factor = 4*1sq.unit / 2unit *2unit
+ 
+		= 4sq unit /  4sq unit
+So, utilization factor = 1 (It means core has utilized all the area and no spane left)
 
+Aspect Ratio = Height / width = 2 unit / 2unit = 1
+
+
+From above formula we can say that, if aspect ratio is unity it signifies that chip is in square shape. Other than unity it will be always rectangular shape.
 
 
 
