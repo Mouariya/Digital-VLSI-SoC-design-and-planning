@@ -462,6 +462,9 @@ In the OpenLANE lower priority is given to system default (floorplanning.tcl), t
 
 Now we see, with this settings how floorplan run.
 
+## Review floorplan files and steps to view floorplan
+
+In the run folder, we can see the connfig.tcl file. this file contains all the configuration that are taken by the flow. if we open the config.tcl file, then we can see that which are the parameters are accepted in the current flow.
 
 
 
