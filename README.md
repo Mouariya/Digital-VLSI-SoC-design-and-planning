@@ -465,6 +465,8 @@ Now we see, with this settings how floorplan run.
 ## Review floorplan files and steps to view floorplan
 
 In the run folder, we can see the connfig.tcl file. this file contains all the configuration that are taken by the flow. if we open the config.tcl file, then we can see that which are the parameters are accepted in the current flow.
+![open3](https://github.com/user-attachments/assets/34bf2145-30e2-4c35-9758-4d5a02d3985c)
+
 
 
 
