@@ -397,8 +397,13 @@ Now let's consider that local circuitory and keep it as a black box and it can b
 
 ![Screenshot 2024-12-17 175824](https://github.com/user-attachments/assets/23d14dfa-a40e-4dbb-b91d-968ac548e473)
 
-If all capacitors dischared at he same time then ground potential will rise above 0V, and if it is above noise margin then then it may creats problem. 
+If all capacitors dischared at the same time then ground potential will rise above 0V, and if it is above noise margin then then it may creats problem. 
 and this rise in voltage called as "Groun Bounce"
+
+![Screenshot 2024-12-17 180411](https://github.com/user-attachments/assets/ae03bd4f-cbb3-49aa-a07c-c19b3c68753e)
+
+
+If all the capacitors chagred at the same time then this will lower down the Vdd of the supply, and if it will be in the range of noise margin then it will create problem.
 
 
 
