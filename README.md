@@ -346,6 +346,9 @@ Before that will remove all the wires and bring all the flip flops and logic gat
 
 **Die**:- The die refers to the actual piece of semiconductor material (usually silicon) on which the integrated circuit is fabricated. It is the small, rectangular or square slice of silicon wafer that contains the core circuitry and all other components of the IC.
 
+![Screenshot 2024-12-17 164439](https://github.com/user-attachments/assets/159b8e09-4b85-47e6-8b6c-ac8441625f60)
+
+
 
 
 
