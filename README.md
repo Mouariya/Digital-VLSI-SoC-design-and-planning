@@ -388,6 +388,7 @@ surround pre-placed cells with Decoupling capacitor:- Let consider some circuit,
 
 In the chip it will look something like shown below Decoupling capacitors are placed in between the block a, block b and block c. So here in this whole block it has been ensured that supply is being done by the de-coupling capacitor. Once we are done with this we have taken care of the local communication.
 
+![Screenshot 2024-12-17 174342](https://github.com/user-attachments/assets/65a1dde3-d4ea-4a7b-837b-f8905fc445b3)
 
 
 
