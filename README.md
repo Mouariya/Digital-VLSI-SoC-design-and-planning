@@ -406,6 +406,10 @@ and this rise in voltage called as "Groun Bounce"
 If all the capacitors chagred at the same time then this will lower down the Vdd of the supply, and if it will be in the range of noise margin then it will create problem.
 
 
+![Screenshot 2024-12-17 180818](https://github.com/user-attachments/assets/f8e93949-8c51-4d7d-a6ef-060778071773)
+
+The phenomenon we have seen was causing the lowering of the supply voltage,this problem occured because power has applied to one point only. The solution of the problem is use multiple power supply. So, every block will take charge from neartest power supply and similarly dump the charge to the nearer ground. this type of power supply is called mesh.
+
 
 
 
