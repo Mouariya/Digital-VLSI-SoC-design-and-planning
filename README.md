@@ -427,6 +427,7 @@ let's have one more design that needs to be implemented. this types of circuits 
 
 
 
+![Screenshot 2024-12-17 184506](https://github.com/user-attachments/assets/9c211adf-9707-4400-9539-ac38f829b87b)
 
 
 
