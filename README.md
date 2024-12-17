@@ -395,6 +395,11 @@ In the chip it will look something like shown below Decoupling capacitors are pl
 Now let's consider that local circuitory and keep it as a black box and it can be repeat multiple times and there is some logic present at the boundaries also and the problem of current demand was solved by de-coupling capacitor. There is signal which is send from driver to load and the signal is basically logic 0 to logic 1. Here we need to maintain the particular driver to load line with same signal so that the load recieves the same. Now power supply is applied. Now assume 16 bit bus has to retain the same signal from driver to the load. so it should get the sufficient power from the supply. But at this bus, there is no de-coupling capacitor is available because it is not physible to put capacitor at all over the place. now, power supply is far away from the bus, that is why some voltage drop between them will occur definetly.
 
 
+![Screenshot 2024-12-17 175824](https://github.com/user-attachments/assets/23d14dfa-a40e-4dbb-b91d-968ac548e473)
+
+If all capacitors dischared at he same time then ground potential will rise above 0V, and if it is above noise margin then then it may creats problem. 
+and this rise in voltage called as "Groun Bounce"
+
 
 
 
