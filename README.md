@@ -435,6 +435,7 @@ Let's put this netlist in the core which we have designed before and let's try t
 
 
  
+![Screenshot 2024-12-17 184931](https://github.com/user-attachments/assets/ec055d4a-f876-4dee-badc-b2bb0de8129f)
 
 
 
