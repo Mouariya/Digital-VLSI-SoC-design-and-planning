@@ -364,7 +364,7 @@ Aspect Ratio = Height / width = 2 unit / 2unit = 1
 From above formula we can say that, if aspect ratio is unity it signifies that chip is in square shape. Other than unity it will be always rectangular shape.
 
 
-## (b) Concept of Pre-Placed cells
+## Concept of Pre-Placed cells
 
 Lets take a combinational logic which does some amount of function and assume its a huge circuit having some N Logic gates so let's devide it into some small numbers of gates. We will cut the whole circuit into two parts, and separate both of them into two blocks and both block will be implemented seperately.
 
@@ -380,7 +380,7 @@ These IP's have user-defined locations, and hence are placed in chip before auto
 
 These cells are placed in such a way that, the placement and routing tool do not touch the location of the cell.
 
-**(c) De-Coupling Capacitors**
+**De-Coupling Capacitors**
 
 surround pre-placed cells with Decoupling capacitor:- Let consider some circuit, which is the part of the blocks which has been described earlier. When some gate (let consider AND gate) switched from 0 to 1 or 1 to 0, considered amount of the switching current required because of available small capacitance . This capacitor should be completely charged to represent logic 1 and completly discharged to represent logic 0. Consider capacitance to be 0. Rdd,Ldd,and Lss are well defoned values. During switvhing operation, the circuit demands switching current i.e. peak current. Now, due to the presence of Rdd and Ldd, there will be a voltage drop across them and the voltage at Node 'A' would be Vdd' instead of Vdd.
 
@@ -389,6 +389,12 @@ surround pre-placed cells with Decoupling capacitor:- Let consider some circuit,
 In the chip it will look something like shown below Decoupling capacitors are placed in between the block a, block b and block c. So here in this whole block it has been ensured that supply is being done by the de-coupling capacitor. Once we are done with this we have taken care of the local communication.
 
 ![Screenshot 2024-12-17 174342](https://github.com/user-attachments/assets/65a1dde3-d4ea-4a7b-837b-f8905fc445b3)
+
+**Power Planning** :
+
+Now let's consider that local circuitory and keep it as a black box and it can be repeat multiple times and there is some logic present at the boundaries also and the problem of current demand was solved by de-coupling capacitor. There is signal which is send from driver to load and the signal is basically logic 0 to logic 1. Here we need to maintain the particular driver to load line with same signal so that the load recieves the same. Now power supply is applied. Now assume 16 bit bus has to retain the same signal from driver to the load. so it should get the sufficient power from the supply. But at this bus, there is no de-coupling capacitor is available because it is not physible to put capacitor at all over the place. now, power supply is far away from the bus, that is why some voltage drop between them will occur definetly.
+
+
 
 
 
