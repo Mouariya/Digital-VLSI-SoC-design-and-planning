@@ -339,6 +339,12 @@ with help of these dimensions and netlist let's calculate the area occupied by t
 
 Before that will remove all the wires and bring all the flip flops and logic gates in a single plate. So after combining them together width and length will be 2 Sq. units each and if we calculate the total area the it will be 4 Sq. units. So now we have the rough calculation of minimum area occupied by the netlist.
 
+![Screenshot 2024-12-17 163711](https://github.com/user-attachments/assets/6f3cbbd2-e1f1-4d28-bc6d-3e72f3d59c10)
+
+
+**Core**:- In the context of digital IC design, "core" can also refer to a pre-designed, reusable block of logic or functionality, such as a CPU core, memory controller core, etc., integrated into a larger IC design.
+
+**Die**:- The die refers to the actual piece of semiconductor material (usually silicon) on which the integrated circuit is fabricated. It is the small, rectangular or square slice of silicon wafer that contains the core circuitry and all other components of the IC.
 
 
 
