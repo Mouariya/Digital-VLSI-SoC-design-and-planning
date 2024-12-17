@@ -478,6 +478,9 @@ To see the actual layout after the flow, we have to open the magic file by addin
 And then after pressing the enter, Magic file will open. here we can see the layout.
 
 
+![open5](https://github.com/user-attachments/assets/e32507fa-c196-4f88-bf16-4b2d31e7bb68)
+# Review floorplan layout in Magic
+In the layout we can see that, input output pins are at equal distance.
 
 
 
