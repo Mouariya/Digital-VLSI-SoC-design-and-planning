@@ -485,5 +485,6 @@ In the layout we can see that, input output pins are at equal distance.
 ![open7](https://github.com/user-attachments/assets/d9d37a04-7a3d-4ed1-83f1-93d10c61aa1b)
 after selecting (To select object, first click on the object and then press 's' from keyboard. the object will hight lited. to zoom in the object, click on the object and then press 'z' and for zoom out press 'sft+z') one input pin, if we want to check the location or to know at on which layer it is available, we have to open tkcon window and type "what". it will shows all the details about that perticular pin.
 
+![open6](https://github.com/user-attachments/assets/0536ec40-a342-4c2c-a931-5aad17a83405)
 
 
