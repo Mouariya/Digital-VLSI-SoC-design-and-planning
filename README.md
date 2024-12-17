@@ -364,6 +364,10 @@ Aspect Ratio = Height / width = 2 unit / 2unit = 1
 From above formula we can say that, if aspect ratio is unity it signifies that chip is in square shape. Other than unity it will be always rectangular shape.
 
 
+## Concept of Pre-Placed cells
+
+Lets take a combinational logic which does some amount of function and assume its a huge circuit having some N Logic gates so let's devide it into some small numbers of gates. We will cut the whole circuit into two parts, and separate both of them into two blocks and both block will be implemented seperately.
+
 
 
 
