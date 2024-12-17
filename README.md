@@ -470,7 +470,12 @@ In the run folder, we can see the connfig.tcl file. this file contains all the c
 
 To watch how floorplane looks, we have to go in the results. in the result, one def( design exchange formate) file is available. if we open this file, we can see all information about die area (0 0) (660685 671405), unit distance in micron (1000). it means 1 micron means 1000 databased units. so 660685 and 671405 are databased units. and if we devide this by 1000 then we can get the dimensions of chips in micrometer.
 
+![open4](https://github.com/user-attachments/assets/bc318511-ae62-4220-b6a9-da19121ca128)
+so, the width of chip is 660.685 micrometer and height of the chip is 671.405 micrometer.
 
+To see the actual layout after the flow, we have to open the magic file by adding the command magic -T /home/kunalg123/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def
+
+And then after pressing the enter, Magic file will open. here we can see the layout.
 
 
 
