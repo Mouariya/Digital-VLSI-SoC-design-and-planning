@@ -412,6 +412,8 @@ The phenomenon we have seen was causing the lowering of the supply voltage,this 
 
 ![Screenshot 2024-12-17 180955](https://github.com/user-attachments/assets/be26a386-f14b-4391-b192-bfe6e4079980)
 
+This is how final power planning looks like 
+
 
 
 
