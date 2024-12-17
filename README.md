@@ -437,7 +437,11 @@ Let's put this netlist in the core which we have designed before and let's try t
  
 ![Screenshot 2024-12-17 184931](https://github.com/user-attachments/assets/ec055d4a-f876-4dee-badc-b2bb0de8129f)
 
+Here one thing that we noticed is that clock-in and clock-out pins are bigger in size as compared to input and output pins. reason behind this is that, input clocks are conntinuously provides the signal to the every elements of the chip and output clock should out the signal as fast as possible. So, we need least resistance path for the clocks inputs and clocks outputs. So, bigger the size, lower the resistance.
 
+One more thing is need to take care about is that, this pin placement area is blocked for routing and cell placements. so we nned to do logical cell placement blockage. this blockage is shoown in above image in between pins.
+
+So, floor plan is ready for Placement and Routing step.
 
 
 
