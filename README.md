@@ -218,7 +218,7 @@ With OpenLANE, we took a preventive approach. here we add fake antenna diode nex
 
 **Physical Verification (DRC and LVS)**:- Magic is used for design Rules checking and SPICE Extraction from Layout. Magic and Netgen are used for LVS.
 
-# Get familiar to open-source EDA tools
+# (c) Get familiar to open-source EDA tools
 
 # OpenLANE Directory structure in detail
 
