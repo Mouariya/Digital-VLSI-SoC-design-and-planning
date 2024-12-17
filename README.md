@@ -364,13 +364,27 @@ Aspect Ratio = Height / width = 2 unit / 2unit = 1
 From above formula we can say that, if aspect ratio is unity it signifies that chip is in square shape. Other than unity it will be always rectangular shape.
 
 
-## Concept of Pre-Placed cells
+## (b) Concept of Pre-Placed cells
 
 Lets take a combinational logic which does some amount of function and assume its a huge circuit having some N Logic gates so let's devide it into some small numbers of gates. We will cut the whole circuit into two parts, and separate both of them into two blocks and both block will be implemented seperately.
 
 ![Screenshot 2024-12-17 165337](https://github.com/user-attachments/assets/0a72441e-5401-4e39-ad17-4f52ca7347e1)
 
 In both the blocks lets extend the input output pins and now we will black box the boxes and detached them. After black boxing, the upper portion is invisible from the top or invisible to the one , who is looking into the main netlist. now will seperate them out as two different IP's or modules.
+![Screenshot 2024-12-17 165600](https://github.com/user-attachments/assets/50993692-ae76-419c-ad72-719fca8c788c)
+Advantage of doing this is we can reuse them multiple times after implimenting once only. Similary there are other IP's also available for eg. Memory, Clock-gating cell, Comporator, MUX all of these are part of the top level netlist.They recieve some signals and perform functions and deliver the outputs but the functionality of the cell is implemented only once.
+
+The arrangement of these IP's in a chip is refferd as floorplanning.
+
+These IP's have user-defined locations, and hence are placed in chip before automated placement and routing are called "pre-placed cells".
+
+These cells are placed in such a way that, the placement and routing tool do not touch the location of the cell.
+
+**(c) De-Coupling Capacitors**
+
+surround pre-placed cells with Decoupling capacitor:- Let consider some circuit, which is the part of the blocks which has been described earlier. When some gate (let consider AND gate) switched from 0 to 1 or 1 to 0, considered amount of the switching current required because of available small capacitance . This capacitor should be completely charged to represent logic 1 and completly discharged to represent logic 0. Consider capacitance to be 0. Rdd,Ldd,and Lss are well defoned values. During switvhing operation, the circuit demands switching current i.e. peak current. Now, due to the presence of Rdd and Ldd, there will be a voltage drop across them and the voltage at Node 'A' would be Vdd' instead of Vdd.
+
+
 
 
 
