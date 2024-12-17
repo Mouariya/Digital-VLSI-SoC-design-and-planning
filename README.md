@@ -449,7 +449,10 @@ So, floor plan is ready for Placement and Routing step.
 Before we run floorplane we will be needed with some switches, which we can get from the openlane configuration 
 
 
+![open1](https://github.com/user-attachments/assets/a8fd3b9e-bda3-4623-b1ff-beccddd09fae)
+Here we can see that the core utilization ratio is 50% (bydefault) and aspect ratio is 1 (bydefault). similarly other information is also given. But it is not neccessory to take these values. we need to change these value as per the given requirments also.
 
+Here FP_PDN files are set the power distribution network. These switches are set in the floorplane stage bydefault in OpenLANE.
 
 
 
