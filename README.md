@@ -418,7 +418,8 @@ This is how final power planning looks like
 ![Screenshot 2024-12-17 181227](https://github.com/user-attachments/assets/3d431d18-04d7-43fe-a8ec-5a11cf8d62da)
 
 
-
+## Pin placement and logical cell placement blocks :
+Lets take below designs for example that needs to be implemented. Here first circuit is driven by clk1 and second circuit is driven by clk2 and both has different inputs Din1 and Din2 respectively and outputs as Dout1 and Dout2.Along with that we have some preplaced cells as well as Blocka which recieves inputs from Din1 second input from Din2. We have another preplced cell as Blockb Which recieves input from clk1 and clk2 and provides a clk output. So currently we have 4 input ports Din1,Din2,Clk1,Clk2 and 3 output ports Dout1,ClkOut,Dout2
 
 
 
