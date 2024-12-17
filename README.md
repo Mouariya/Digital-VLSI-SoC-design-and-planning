@@ -431,6 +431,8 @@ let's have one more design that needs to be implemented. this types of circuits 
 
 
 
+Let's put this netlist in the core which we have designed before and let's try to fill this empty area between core and die with the pin information. The frontend team who decides the netlist connectivity input and output and the backend team who done the pin placements. So according to the pin placements, we have to locate the preplaced blocks nearer to the inputs of the preplaced blocks.
+
 
  
 
