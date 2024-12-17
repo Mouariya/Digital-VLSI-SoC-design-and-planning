@@ -455,7 +455,12 @@ Here we can see that the core utilization ratio is 50% (bydefault) and aspect ra
 Here FP_PDN files are set the power distribution network. These switches are set in the floorplane stage bydefault in OpenLANE.
 
 
+![open2](https://github.com/user-attachments/assets/d830b745-8387-4139-97f9-f277fa69aafc)
+Here, (FP_IO MODE) 1, 0 means pin positioning is random but it is on equal distance.
 
+In the OpenLANE lower priority is given to system default (floorplanning.tcl), the next priority is given to config.tcl and then priority is given to PDK varient.tcl (sky130A_sky130_fd_sc_hd_congig.tcl).
+
+Now we see, with this settings how floorplan run.
 
 
 
