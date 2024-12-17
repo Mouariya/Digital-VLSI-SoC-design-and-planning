@@ -368,6 +368,13 @@ From above formula we can say that, if aspect ratio is unity it signifies that c
 
 Lets take a combinational logic which does some amount of function and assume its a huge circuit having some N Logic gates so let's devide it into some small numbers of gates. We will cut the whole circuit into two parts, and separate both of them into two blocks and both block will be implemented seperately.
 
+![Screenshot 2024-12-17 165337](https://github.com/user-attachments/assets/0a72441e-5401-4e39-ad17-4f52ca7347e1)
+
+In both the blocks lets extend the input output pins and now we will black box the boxes and detached them. After black boxing, the upper portion is invisible from the top or invisible to the one , who is looking into the main netlist. now will seperate them out as two different IP's or modules.
+
+
+
+
 
 
 
