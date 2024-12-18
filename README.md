@@ -487,4 +487,8 @@ after selecting (To select object, first click on the object and then press 's' 
 
 ![open6](https://github.com/user-attachments/assets/0536ec40-a342-4c2c-a931-5aad17a83405)
 
+# Library building and Placement
+
+## Netlist binding and initial place design
+**Bind netlist with physical cells** 
 
