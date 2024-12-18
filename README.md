@@ -491,4 +491,42 @@ after selecting (To select object, first click on the object and then press 's' 
 
 ## Netlist binding and initial place design
 **Bind netlist with physical cells** 
+![Screenshot 2024-12-18 182533](https://github.com/user-attachments/assets/96ada0a6-8512-4198-beb0-2d0dfa59d8fe)
+
+ This is the Netlist circuit that have different types of gate and flip flops and many more logical circuits repersented using different blocks. But in actual circuit these do not looks like the shape they are having in the Netlist. In actual physical cell they are converted into either a square or rectangular cell.
+ 
+![Screenshot 2024-12-18 183309](https://github.com/user-attachments/assets/7cd478cd-954b-4af1-b49e-f61d4071e899)
+
+Here in the above image each and ever netlist components have been converted into a square shape box and this how they looks like in real worlds
+
+**Library** : In library we will get each of these blocks with its specifications like, size of blocks,delay time, required condition for the particular blocks. Otherthan that we can also get some blocks with same working specifications of different size.
+![Screenshot 2024-12-18 184127](https://github.com/user-attachments/assets/8978a023-d9f6-4af6-881d-974a7b5cefcc)
+
+
+**Placement**:  Once we have given proper shape and size to each and every gates the next step is to take those particular shapes ans sizes and place it on the floorplan. We have the floorplan with inout and output ports, we have particular netlist, and we have particular size given to each component of this netlist. So we have the physical view of the logic gates. Next step is to place the netlist onto the floorplan. We have to take the connectivity information from the netlist and design the physical view gates on the floorplan.
+
+
+
+![Screenshot 2024-12-18 184318](https://github.com/user-attachments/assets/f70d1bb0-fde8-4712-bace-72522398ca2b)
+
+# Optimize placement using estimated wire-length and capacitance
+ In optimize placement we will resolve the problem of distancing.Lrt's take the example of FF1 to Din2. There must be a wire going from Din2 to FF1 but before going into routing the desing or wiring we will try to estimate the capacitances. If we lokk the capacitance from Din2 to FF1 it is every huge because wire length is huge in that case even the resutance will also be huge because of that length. If we send the signal from Din2 then it will be difficult for FF1 to catch that input because distance is large. So we can place some intermediate steps to maitain the Signal integrity. By this the input is succesfully driven to the FF1 from Din2. These intermediate steps are called here Repeaters , Repeaters are basically buffers that will recondition the original signal and make a bew signal which replicate the original signal and send it forward this process repeates untill we reach to the actual cell where we want to send the input in this way signal integrity is maintained. By using repeaters we resolve the problem of signal integrity but there will be a loose of area because more and more repeaters are used more area will be used of the particular floorplan.
+
+
+
+![Screenshot 2024-12-18 185436](https://github.com/user-attachments/assets/5aa82419-3cd8-48be-bdaa-433e5c867d7d)
+
+Since in this step distance between two blocks are not much, that's why we dont need repeaters here  we can directly connect the blocks with each other.
+
+
+![Screenshot 2024-12-18 185807](https://github.com/user-attachments/assets/7aedc2a0-797b-4b4c-88f9-ec2b1614a59c)
+
+But here in 2nd stage since blocks are far away from each other, so we need to put repeaters between those two blocks which has much distance between them.
+
+# # Need for libraries and characterization
+ Every ICdesign Flow needs to go through the several steps. First step to go through is Logic Synthesis, let's say if we have a functionality which is coded in a form of an RTL so first we need to convert the functionality into legal hardware is refered to as Logic Synthesis. Ouput of the logic synthesis is arrangement of gates that will represent the original functionality that has been described using an RTL. Next step of logic synthesis is Floorplaning, in this we omport the output of logic synthesis and decide the size of the Core and Die. The next step after floorplaning is Placement, in this we take the particular logic cell send place them on the chip in such a fashion that initial timing is better. Next step is CTS(Clock tree synthesis), in this we take care that clk should reach each and every signal at the same time also take care of each clk signal has equal rise and fall.Next step is Routing, routing has to go through the certain flow dependendent on the characterization of the flip flop.And now comes the last step STA(Static timing analysis), in this we try to see the set up time, hold time, maximum achieved frequency of the circuit. One common thing across all stages 'GATES or Cells'.
+
+ ## Congestion aware placement using RePlAce
+
+ 
 
