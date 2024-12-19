@@ -528,7 +528,7 @@ But here in 2nd stage since blocks are far away from each other, so we need to p
 
  # # Congestion aware placement using RePlAce
 
- 
+    [image required]
 ## (c) Cell design and characterization flows
 
 **Inputs for cell design flow** 
@@ -675,3 +675,21 @@ Let's say we have the waveform to understand the slew calculation.
 
 
 ![Screenshot 2024-12-19 104833](https://github.com/user-attachments/assets/578828e0-2a46-48a6-8174-9cdd48ea4602)
+
+<div class="toc">
+  <ul>
+    <li><a href="#header-1">Day 3- Design library cell using Magic Layout and ngspice characterization
+</a></li>
+	<ul>
+
+# Labs for CMOS inverter ngspice simulations
+
+**IO Placer Version**
+
+Till now, we have done floor planning and run placement also. But if we want to change the floorplanning, for example, in our floor planning, pins are at equal distance and if we want to change it then we can also make it by Set command.
+
+For that first we have to check the swithes in the configuration and from that we have to take the syntax "env(FP_IO_MODE) 1". and make it to the "env(FP_IO_MODE) 2". then again run the floorplanning.
+
+Then check the changes in the pins location through magic -T.
+
+          [image required]
