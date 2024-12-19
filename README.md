@@ -682,7 +682,7 @@ Let's say we have the waveform to understand the slew calculation.
 </a></li>
 	<ul>
 
-# Labs for CMOS inverter ngspice simulations
+# (a)Labs for CMOS inverter ngspice simulations
 
 **IO Placer Version**
 
@@ -693,3 +693,115 @@ For that first we have to check the swithes in the configuration and from that w
 Then check the changes in the pins location through magic -T.
 
           [image required]
+
+   ## SPICE deck creation for CMOS inverter
+
+   **VTC- SPICE simulations**:-Here first part is to create SPICE deck, it's the connectivity information about the netlist so basically it's a netlist.It has input that are provided to the simulation and the deck points which will take the output.
+
+**Component connectivity**:- In this we need to define the connectivity of the substrate pin. Substrate pin tunes the threshold voltage of the PMOS and NMOS.
+
+
+![Screenshot 2024-12-19 123315](https://github.com/user-attachments/assets/647939b0-1f2f-4839-af2d-42e24ba5a51c)
+
+**Component Values** : Althoug the size of PMOS is two times of NMOS, but for the simplicity we have taken here it as equal to NMOS. And the values of load capacitor 10fF
+
+
+
+![Screenshot 2024-12-19 124846](https://github.com/user-attachments/assets/50753e8a-1ce5-454f-9267-1c90db780c18)
+
+**Identify the nodes**:  Nodes are the points where two or more two branches are connected. Here we use nodes to repersents the component connected between them.
+
+
+
+![Screenshot 2024-12-19 125242](https://github.com/user-attachments/assets/841784e8-e48d-4803-9146-b79622f2dadd)
+
+**Name the nodes**:- Now we wiil name these nodes as Vin, Vss, Vdd, out.
+
+
+
+
+![Screenshot 2024-12-19 125830](https://github.com/user-attachments/assets/c9b9ca28-f526-45a8-a929-10f97f3419cc)
+
+Now we will start writing the SPICE deck. It's written like shown below
+
+Drain- Gate- Source- Substrate
+
+For **M1 MOSFET** drain is connected to out node, gate is connected to in node, PMOS transistor substrate and Source is connected to Vdd node.
+
+For **M2 MOSFET** drain is connected to out node, gate is connected to in node, NMOS source and substrate are connected to 0.
+
+
+
+![Screenshot 2024-12-19 130031](https://github.com/user-attachments/assets/5d57d4b4-d9b7-4cca-9dc0-3f8b915923bc)
+
+## SPICE simulation lab for CMOS inverter
+
+Till now we have described the connectivity information about CMOS inverter now we will describe the other components connnectivity information like load capacitor, source. Let's seee the connectivity of output load capacitor.
+
+It is connected between out and the node 0. And it's value is 10ff. Supply voltage(Vdd) which is connected between Vdd and node 0 and value of it is 2.5 , Similarly we have input voltage which is connected between Vin and node 0 and its value is 2.5.
+
+
+![Screenshot 2024-12-19 132659](https://github.com/user-attachments/assets/f1288b05-8c16-49d8-ac17-80bec227e3af)
+
+Now we will do the SPICE simulation for the particular values. And will get the graph.
+
+
+![Screenshot 2024-12-19 133250](https://github.com/user-attachments/assets/ca3c04d1-2be0-48ef-a10a-9a60a5a8a845)
+
+## Switching Threshold Vm
+
+These both model of different width has their own application. By comparing this both waveform, we can see that the shape of the both waveform is same irrespective of the voltage level.It tells that CMOS is a very roboust device. when Vin is at low, output is at high and when Vin is at high, the output is at low. so the charactoristic is maintain at all kind of CMOS with different size of NMOS or PMOS. That is why CMOS logic is very widely used in the design of the gates.
+
+Switching thresold, Vm (the point at which the device switches the level) is the one of the parameter that defined the robustness of the Inverter. Switching thresold is a point at which Vin=Vout.
+
+
+
+
+![Screenshot 2024-12-19 134320](https://github.com/user-attachments/assets/513b6097-e33e-484c-abc1-4b563a3432cf)
+
+In the graph below we can identify that the PMOS and NMOS are in which region. The direction of current flowing is different for NMOS nad PMOS.
+
+
+![Screenshot 2024-12-19 134523](https://github.com/user-attachments/assets/9fc001e0-0a61-445a-a436-e04b756dd707)
+
+## Static and dynamic simulation of CMOS inverter
+
+In Dynamic simulation we will know about the rise and fall delay of CMOS inverter and how does it varying with Vm. In this simulation everything else will remian same except the input which is provided will be a pulse and simulation command will be .tran
+
+The graph Time vs Voltage will be plotted here from where we can calculate the rise and fall delay.
+
+
+![Screenshot 2024-12-19 165035](https://github.com/user-attachments/assets/9592264a-c88f-4217-8d5c-497668f8ab7f)
+
+
+![Screenshot 2024-12-19 165312](https://github.com/user-attachments/assets/d6aacefc-1167-41a1-b5b7-551e9e96e46b)
+
+## Lab steps to git clone vsdstdcelldesign 
+
+To get the clone, copy the clone address from reporetery and paste in openlane terminal after the command git clone. this will create the folder called "vsdstdcelldesign" in openlane directory.
+
+
+![open8](https://github.com/user-attachments/assets/5a2527eb-3072-4ba3-9475-a2b0cb479da5)
+
+now, if we open the openlane directory, we find the vsdstdcelldesing folder in the openlane directory.
+
+
+![Screenshot 2024-12-19 172222](https://github.com/user-attachments/assets/8db4ecc9-831d-4c99-8305-b802c0daf2f4)
+
+Now if we goe to the vsdstdcelldesign folder and open it, we get the .mag file,libs file etc.
+
+
+![Screenshot 2024-12-19 172612](https://github.com/user-attachments/assets/d1d929d5-2067-4ae4-bf08-2995744c7d2f)
+
+Now, here to see the layout in magic, we don't need to write the whole address because we copy the tech file here.Now, we can see the layout of CMOS inverter in the magic like this.
+
+
+
+![Screenshot 2024-12-19 173933](https://github.com/user-attachments/assets/6e7c2154-c247-41b0-b8ec-d4beb3ba4e3d)
+
+
+## (b) Inception of layout ̂A CMOS faabrication process
+
+**Create Active regions** 
+
+
