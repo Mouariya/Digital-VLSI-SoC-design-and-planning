@@ -526,7 +526,152 @@ But here in 2nd stage since blocks are far away from each other, so we need to p
 # # Need for libraries and characterization
  Every ICdesign Flow needs to go through the several steps. First step to go through is Logic Synthesis, let's say if we have a functionality which is coded in a form of an RTL so first we need to convert the functionality into legal hardware is refered to as Logic Synthesis. Ouput of the logic synthesis is arrangement of gates that will represent the original functionality that has been described using an RTL. Next step of logic synthesis is Floorplaning, in this we omport the output of logic synthesis and decide the size of the Core and Die. The next step after floorplaning is Placement, in this we take the particular logic cell send place them on the chip in such a fashion that initial timing is better. Next step is CTS(Clock tree synthesis), in this we take care that clk should reach each and every signal at the same time also take care of each clk signal has equal rise and fall.Next step is Routing, routing has to go through the certain flow dependendent on the characterization of the flip flop.And now comes the last step STA(Static timing analysis), in this we try to see the set up time, hold time, maximum achieved frequency of the circuit. One common thing across all stages 'GATES or Cells'.
 
- ## Congestion aware placement using RePlAce
+ # # Congestion aware placement using RePlAce
 
  
+## (c) Cell design and characterization flows
 
+**Inputs for cell design flow** 
+In Cell Design Flow, Gates, flipflops, buffers are named as 'Standard Cells'. These standard cells are being placed in the section called as 'Library'.And in the library many other cells are available which have same functionality but the size is different.
+
+
+
+![Screenshot 2024-12-19 091540](https://github.com/user-attachments/assets/4af6ce64-34a4-4a41-a08a-9e966bbba44d)
+
+If you lokk into one of the inverter from the library the cell design flowis as follows
+
+The inverter has to represented in form of the shape, drive strength, power charracteristic and so on. Here cell design flow is devided into three parts.
+
+**Inputs**
+
+**Design steps**
+
+**Outputs**
+
+**1)Inputs**:- Inputs required for cell design is PDKs, DRC and LVS rules SPICE models, library and user defined specs. In DRC& LVS rules tech file is provided which contains design rules and actual values. Rules can be converted in to code. SPICE MODEL tells about threshold voltage equation.
+
+
+
+
+
+![Screenshot 2024-12-19 091942](https://github.com/user-attachments/assets/bb90c17b-796c-4586-9081-96b46ba1982b)
+
+## Circuit Design Steps
+
+The seperation between the power rail and the ground rail defines the cell height. Cell width depends upon the timing and drive strength.
+
+**2)design steps**:- Design involves three steps which are circuit design, layout design, characterization.
+
+In circuit Design there are two steps.
+
+First step is to implement the function itself and second step is to model the PMOS nad NMOS transistor in such a fashion in order to meet the libraray.
+
+**3)Outputs**
+
+The typical output what we get from the circuit design is CDL(circuit description language) file,GDSII,LEF,extracted spice netlist(.cir).
+
+
+
+
+![Screenshot 2024-12-19 093127](https://github.com/user-attachments/assets/520e70b6-7f4d-4162-aa3c-a17a89fede78)
+
+## Layout design step
+ So in layout design first we implement the given function using MOS transistor, it needs some set of NMOS and PMOS transistors to implement the function. Second step is to get PMOS network graph and NMOS network graph.
+
+ 
+![Screenshot 2024-12-19 093359](https://github.com/user-attachments/assets/3845f0c1-b362-49a2-9444-c08c4c2b7c07)
+
+After getting the network graphs next step is to obtain the Euler's path. Eule's path is basically the path which is traced only once.
+
+
+![Screenshot 2024-12-19 093509](https://github.com/user-attachments/assets/e102938e-6c50-4395-bc27-2399efc0cb0d)
+
+After this we will draw the stick diagram and it will be purely based on Euler's path. This stick diagram is derived from the circuit diagram.
+
+
+![Screenshot 2024-12-19 093523](https://github.com/user-attachments/assets/0d3d94bd-0708-4525-b6a1-810e6910d0e0)
+
+Next step is to convert this stick diagram into a typical Layout, into a proper layout and then get the proper rule we have discissed earlier. Once we get the particular layout then we have the cell width, cell length and all the specifications will be there like drain current, pin locations and so on.
+
+
+
+![Screenshot 2024-12-19 094355](https://github.com/user-attachments/assets/0255f6bc-f52e-4733-b165-fd996c75ba5c)
+
+## Typical characterization flow
+Let's try to build the characterization flow based on the inputs we have,
+
+First step is to read in the model, second step is to read the extracted spice netlist, third step is to define or recognize the behaviour of the buffer, fourth step is to read the subcircuits of the inverter and then in the fifth step need to attach the necessary power supplies, sixth step is to apply the stimulus then in the seventh step we need to provide the necessary output capacitance then in the final eighth step in which we need to provide necessary simulation command for example if we are doing transent simulation so we need to give .tran command , if we are doing DC simulation then we give .dc command.
+
+
+
+![Screenshot 2024-12-19 100420](https://github.com/user-attachments/assets/ab963bdf-ee17-4d2b-b3ce-10919010f583)
+
+In the next step we will feed all those 1-8 inputs to the **GUNA** software for time,power,noise,.lib function analysis
+
+
+![Screenshot 2024-12-19 101654](https://github.com/user-attachments/assets/835433b7-dcdc-4135-895f-9474430f8beb)
+
+# (d) General timing characterization parameters
+## Timing threshold definitions
+As seen in the previous section we have inverter connected back to back, we have power sources, we have the stimulus applied to the inverter all these things brings a very important point of understanding differenet threshold points of a waveform itself and it is called as "Timing threshold definitions'.
+
+in the figure below the term 'Slew_low_rise-thr' depicts the value close to 0. and the typically value of this is about 20% it could be 30% as well.
+
+
+**'Slew_low_rise-thr'**
+
+![Screenshot 2024-12-19 102908](https://github.com/user-attachments/assets/ace60107-c49d-4628-9ba1-9141a2b5c1af)
+
+
+**Slew_high_rise_thr**
+
+
+
+
+![Screenshot 2024-12-19 103310](https://github.com/user-attachments/assets/6d4f4ca4-b99d-45ad-b444-3a814d60539c)
+
+
+**Slew_low_fall_thr**
+
+
+![Screenshot 2024-12-19 103453](https://github.com/user-attachments/assets/24b18aa2-0e59-48ee-b69d-d199b4ec6fad)
+
+
+**Slew_high_fall_thr**
+
+![Screenshot 2024-12-19 103607](https://github.com/user-attachments/assets/71d5a018-ad19-4015-9153-848ec9101fe3)
+
+
+## Propagation delay and transition time
+
+Based on these above values we are going to calculate the further values like propogation delay, current,slews etc.
+
+If we want to calculate the delay of anything we need to subtract the out_rise_thr from in_rise_thr. Here let's take typical value 50%, let's see on the particular waveform how does it works Time delay = Time(out_thr)-time(in_thr)
+
+
+
+
+![Screenshot 2024-12-19 104438](https://github.com/user-attachments/assets/dd24d2c8-22f4-4262-a13d-5d0681d371da)
+
+In the above example in_rise_thr and out_fall)thr was kept at 50%. But if the threshold ponit moves to the top the the output comes before the input and we see negative delay and negative delays are not accepted. So the reason behind having this negative delay is poor choice od threshold point so thr choice of the threshold point is really important.
+
+
+
+![Screenshot 2024-12-19 104536](https://github.com/user-attachments/assets/607c7818-483b-43ef-aaf2-50dffadf83b9)
+
+
+Let's take another example where we have choosed threshold point correctly but still can get a negative delay. Because uotput comes before the input that's why we are getting negative delay here, which is not accepted
+
+
+![Screenshot 2024-12-19 104703](https://github.com/user-attachments/assets/2b298c70-9cc7-4a9d-94c1-a6137712a7ec)
+
+Transition time= time(slew_high_rise_thr)- time(slew_low_rise_thr)
+
+or
+
+**transition time**  = time(slew_high_fall_thr)- time(slew_low_fall_thr)
+
+Let's say we have the waveform to understand the slew calculation.
+
+
+![Screenshot 2024-12-19 104833](https://github.com/user-attachments/assets/578828e0-2a46-48a6-8174-9cdd48ea4602)
