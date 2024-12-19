@@ -803,5 +803,106 @@ Now, here to see the layout in magic, we don't need to write the whole address b
 ## (b) Inception of layout ̂A CMOS faabrication process
 
 **Create Active regions** 
+**1) selecting a substrate**:- we have a p-type silicon substrate having high resistivity(5-50ohm) well dopped, and orintation(100).
+
+**2) creating active region for transistor**:- Region where you see PMOS and NMOS. On p-type substrate we are going to create some small pockets which will be called as active region and in these pockets we are going to create PMOS and NMOS transistor. Will cretae isolation between each and every pockets.
+
+We create the isolation layer by depositing the Sio2 layer (~40nm) on the substrate. Now, we are depositing the Si3N4 layer (~80 nm) on the Sio2 layer.
+
+
+
+![Screenshot 2024-12-19 185817](https://github.com/user-attachments/assets/910a3c3e-6853-477b-b83d-a6f21ea6ab11)
+
+
+Before creating the pocket identify the region where we need to crete the pocket. Now will deposite a layer of photoresist(~1um) on which we will create some mask1 using UV light.
+
+![Screenshot 2024-12-19 190127](https://github.com/user-attachments/assets/e51b2201-3ede-4a66-adb5-4e3f23dc2371)
+
+Here exposed area will soften using UV rays and then later on it will be washed out
+
+
+![Screenshot 2024-12-19 190218](https://github.com/user-attachments/assets/50292f41-a6b5-4148-9d5d-f8a14255c81b)
+
+In the next step we will remove the mask and then will do etching to remove the unwanted area
+
+![Screenshot 2024-12-19 190536](https://github.com/user-attachments/assets/735d3fde-757c-4a55-afa9-ae9ad2517682)
+
+
+**Formation of N-well and P-well**
+
+**3) N-well and P-well formation**:- we can not form P-well and N-well at a same time. we have to protect a region while forming one of the region by photoresist. And then using mask 2 and UV light, we will do patterning of photoresist to form P-well
+
+
+![Screenshot 2024-12-19 191158](https://github.com/user-attachments/assets/2b703ff9-b67c-45fc-8ff6-2d0f700ab6d1)
+
+
+
+![Screenshot 2024-12-19 191318](https://github.com/user-attachments/assets/e6b06a33-7b42-4d1c-8d06-5787c77cd90e)
+
+Here in N-well we will fabricate PMOS transistor and in P-Well we will fabricate NMOS transistor.
+
+**(4) Formation of Gate Terminal**
+
+To form the gate terminal for PMOS and NMOS we repeate all the process ,like masking the surface, exposing to the UV rays and then etching out the unwanted area etc.
+
+
+![Screenshot 2024-12-19 192313](https://github.com/user-attachments/assets/e0cb09f2-cc9c-4085-8476-3b30b10ac2ce)
+
+## Lightly doped drain (LDD) formation
+
+**5) LDD formation**:- Here, we actully want P+,P-,N doping profile in the PMOS and N+,N-,P doping profile for NMOS. Reason for that is
+
+Hot electron effect
+
+short channel effect
+
+For the formation of LDD, we again do ion implantation in P-well by using mask 7 and here we use phosphoros as a ion for light doping.
+
+![Screenshot 2024-12-19 193536](https://github.com/user-attachments/assets/ae5cbd7d-8629-4e02-879a-9eea7d3486fd)
+
+
+
+![Screenshot 2024-12-19 193845](https://github.com/user-attachments/assets/e673af2d-a64e-4537-a404-e882d4b96a64)
+
+
+
+## Source and Drain Formation 
+
+Now to form the drain and source, again we do the ion implantation of arsenic at 75kev to create the N+ implant by using mask 9 in the P-well to form PMOS.
+
+
+![Screenshot 2024-12-19 194241](https://github.com/user-attachments/assets/2b95c03a-9848-4c7f-8b52-2538b16b1b18)
+
+Same process we will repeat for NMOS by using the mask 10 and boron ion in the N-well at 50kev to creat P- implant.
+
+
+
+![Screenshot 2024-12-19 194442](https://github.com/user-attachments/assets/5077927e-62fb-4bf3-b03b-1d3d86e389e1)
+
+
+And then after all these process we put them into high temperature analeaing 
+
+
+![Screenshot 2024-12-19 194712](https://github.com/user-attachments/assets/250cbe57-af67-4292-a3dc-76833acc726c)
+
+## Local interconnect formation
+
+**7)steps tp form contacts and local interconnects**:- First step is remove the thin screen oxide layer by etching. Then deposite the titanium (Ti) using sputtering. here Ti is used because Ti has very low resistivity.
+
+
+![Screenshot 2024-12-19 195506](https://github.com/user-attachments/assets/da58a49f-c60d-4682-9ea1-b54f0e1f605b)
+
+Next step is to create the reaction between Ti layer and source, gate, drain of CMOS. For that wafer is heated at about 650-700 degree temparature in N2 ambient for about 60 seconds. and after reaction, we can see the titanium siliside over the wafer. One more reaction is heppend there between Ti and N. and it results the TIN which is used for local communication.
+
+
+![Screenshot 2024-12-19 195641](https://github.com/user-attachments/assets/64e84a0d-87ed-4a37-bdde-0610c6fee0ea)
+
+Now by using mask 11 and photoresist, we will etched out the TIN and make perticular contacts. TIN is etched out by using RCA cleaning.
+
+
+
+![Screenshot 2024-12-19 195909](https://github.com/user-attachments/assets/bc3f4f50-f428-44d4-bad5-65e474241a32)
+
+## Higher level metal formation
 
 
