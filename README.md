@@ -910,4 +910,15 @@ Now by using mask 11 and photoresist, we will etched out the TIN and make pertic
 
 ![Screenshot 2024-12-20 133958](https://github.com/user-attachments/assets/f6adace5-3469-4197-a266-89f2dd1a8de9)
 
+Now again we will use previous steps to get metal contact done like masking , lithography and all, and then we will deposit a thin layer of titanium metal and then we will do again Chemical Mechanical polishing process to planarizing the surface.
+
+
+![Screenshot 2024-12-20 135002](https://github.com/user-attachments/assets/226d1a10-1ede-4a56-8074-099f537e6626)
+
+## Lab introduction to Sky130 basic layers layout and LEF using inverter
+
+
+![Screenshot 2024-12-19 173933](https://github.com/user-attachments/assets/e4cd9ec2-9935-479e-bbbf-41e53c1bda91)
+
+
 
