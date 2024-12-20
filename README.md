@@ -905,4 +905,9 @@ Now by using mask 11 and photoresist, we will etched out the TIN and make pertic
 
 ## Higher level metal formation
 
+**8)Higher level metal formation**:- These steps are very semilar like previous steps. First thing that we are noticing is that the surface is non planner. it is not good to use this type of non planner serface for matel interconnects because of the problems regarding the metal disconinuty. so, we have to plannerize the surface by depositing the thick layer of sio2 with some impurity to make less resistive layer. and then we used CMP (chemical mechanical polishing) technique to plannerise the surface.
+
+
+![Screenshot 2024-12-20 133958](https://github.com/user-attachments/assets/f6adace5-3469-4197-a266-89f2dd1a8de9)
+
 
