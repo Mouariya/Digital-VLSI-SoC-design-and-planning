@@ -921,4 +921,32 @@ Now again we will use previous steps to get metal contact done like masking , li
 ![Screenshot 2024-12-19 173933](https://github.com/user-attachments/assets/e4cd9ec2-9935-479e-bbbf-41e53c1bda91)
 
 
+In sky130, every color is showing the different layer. here the first layer is for local interconnect shown by blue_purple color, then second layer is metal 1 which is shown by light purple color, and the metal 2 is shown by pink color. N-well is shown by solide das line. green is N-diffusion region. and red is for polysilicon gate. similarly the brown color is for P-diffusion.
+
+In tckon window, we can see that the selected area is NMOS and similarly we can chech PMOS also. and that is how we can check that the CMOS is working or not.
+
+
+
+![open1](https://github.com/user-attachments/assets/b36f1348-a293-42b2-8bfd-de584e956f75)
+
+In similar way we can identify the PMOS of the inverter
+
+
+![open2](https://github.com/user-attachments/assets/d8970282-3076-4f09-a4e8-a9ad8764069d)
+
+we will use this .ext file to create the spice file to be use with our ngspice tool. for that we have apply the command ext2spice cthresh 0 rthresh 0. this will not create anything new. now again we have to type ext2spice command in tckon window.
+
+
+![open4](https://github.com/user-attachments/assets/0bcb5de6-222d-4d62-8999-6388db57617a)
+
+## (c) Sky130 Tech File Labs
+
+**Lab steps to create final SPICE deck using Sky130 tech** 
+
+Let's see what is inside spice file 
+
+
+
+![eopen](https://github.com/user-attachments/assets/17da6a93-01f0-4f0d-b1af-2ca0681a8abf)
+
 
