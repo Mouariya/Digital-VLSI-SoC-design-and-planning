@@ -950,3 +950,62 @@ Let's see what is inside spice file
 ![eopen](https://github.com/user-attachments/assets/17da6a93-01f0-4f0d-b1af-2ca0681a8abf)
 
 
+<div class="toc">
+  <ul>
+    <li><a href="#header-1">Day 4 - Pre-layout timing analysis and importance of good clock tree
+</a></li>
+	<ul>
+
+ ## (a) Timing modeling using delay tables
+
+ **Lab steps to convert grid info to track info**
+
+
+ **Lab steps to convert magic layout to std cell LEF**
+
+ **Introduction to timing libs and steps to include new cell in synthesis**
+
+
+ **Introduction to delay tables**
+
+
+## (b)Timing analysis with ideal clocks using openSTA
+
+**Setup timing analysis and introduction to flip-flop setup time**
+
+
+**Introduction to clock jitter and uncertainty**
+
+
+**Lab steps to configure OpenSTA for post-synth timing analysis**
+
+
+**Lab steps to optimize synthesis to reduce setup violations**
+
+## (c)Clock tree synthesis TritonCTS and signal integrity
+
+
+**Clock tree routing and buffering using H-Tree algorithm**
+
+
+**Crosstalk and clock net shielding**
+
+
+**Lab steps to run CTS using Triton**
+
+
+**Lab steps to verify CTS runs**
+
+## (d) Timing analysis with real clock using openSTA
+
+
+**Setup timing analysis using real clocks**
+
+**Hold timing analysis using real clocks**
+
+
+**Lab steps to analyze timing with real clocks using OpenSTA**
+
+
+ 
+
