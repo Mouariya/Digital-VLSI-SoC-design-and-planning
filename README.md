@@ -1382,4 +1382,124 @@ So, till here we have done CTS and now we are going to do the routing. but befor
 gen_pdn
 
 
+**Lab steps from power straps to std cell power**
 
+
+![Screenshot 2024-12-23 001304](https://github.com/user-attachments/assets/b954b3be-60d4-4225-a352-579a63f508f9)
+
+Here green color is representing the chip, and yellow, red and blue boxes are the I/O pins,power and ground pads respectively.
+
+Power is transfered to the rings from the pads through the black dots shown in the image on the cross section points of the ring and pads.
+
+We have vertical and horizontal tracks which ensures that the power is being transfered from the ring to chip this is shown by the red and blue color. This is how power planing works in physical design of any device.
+
+**Basics of global and detail routing and configure TritonRoute**
+
+The final step of physical design is Routing.
+
+The total process of routing is devided into two part.
+
+Fast route (Global route)
+Detailed Route
+
+
+![Screenshot 2024-12-23 002033](https://github.com/user-attachments/assets/3d90c03b-32a6-4362-a6bd-34534d69454b)
+
+
+In the Global route, the routing region is devided into the rectangular grids cells as shown in the figure above. And it is represented as cores 3D routing graph. Global route is done by FAST route engine.The detailed route is done by TritonRoute engine. A,B,C,D are four pins which we want to connect through routing. and this whole image of A,B,C,D shows the net.
+
+## (c) TritonRoute Features
+**TritonRoute feature 1 - Honors pre-processed route guides** 
+
+**Performs initial detailed route
+**Hounors the prepocessed route guides(obtained after fast route)
+
+
+![Screenshot 2024-12-23 003859](https://github.com/user-attachments/assets/71c6d69f-6872-4e0c-a102-1377570c15d2)
+
+**Requirements of preprocessed guides**
+
+(1) Should have unit width
+
+(2) Should be in preferred direction
+
+Assumes route guides for each net satisfy inter-guide connectivity
+**Two guides are connected if**
+
+They are on the same metal layer with touching edges.
+
+They are on neighbouring metal layers with a non-zero vertically overlapped area.
+
+Works on proposed MILP-based panel-routing scheme with intra-layer parallel and inter-layer sequential routing framework
+
+**TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing**
+
+Each unconnected terminal i.e, pin of a standerd-cell instance should have its pin shape overlapped by a route guide.
+
+
+![Screenshot 2024-12-23 004252](https://github.com/user-attachments/assets/decb0a51-1f02-4359-8a92-11dbb3fe0e28)
+
+Here we can see that black dots are pins of the cells and it is overlapped by route guide. if you have pins on the intersection of the vertical and horizontal tracks that will ensure that it will be overlapped by route guides.
+
+**Intra-layer parallel and inter-layer sequential panel routing**
+
+Intra layer means within the layers and inter layear means between the layers.
+
+![Screenshot 2024-12-23 004422](https://github.com/user-attachments/assets/99932612-7fe1-4eda-9608-d4df8c800ec1)
+
+In this figure we can see the 4 layers of metal. each of these layers are devided in to the "--" lines. lets focus on metal 2 layer. here we assume the routing direction vertical. These "--" lines are called pannels. each pannels assigns the routing guides. here we can see the blue arrows. here routing is heppenes in the even index. it means that intra layer parallel routing. first it is heppenes in the even index and the it will heppen in the odd index. but it is heppening in the parallel in this perticular layer.
+
+
+
+![Screenshot 2024-12-23 004514](https://github.com/user-attachments/assets/2f47baac-5991-4e51-8913-063ae173ca72)
+
+) figure shows the parallel routing of panels on M2.
+
+(b) figure, we can see the parallel routing of even panels on M3 and (c) shows the parallel routing of odd panels on M3.
+
+**TritonRoute method to handle connectivity**
+ (1)INPUTS:-LEF
+(2) OUTPUTS:-detailed routing solution with optimized wore-length and via count
+(3) CONSTRAINTS:-Route guide honouring, connectivity constraonts and design rukes
+Now we have to defined the space where detailed routing take spaced.
+
+**Handling connectivity** :-
+
+
+![Screenshot 2024-12-23 004848](https://github.com/user-attachments/assets/78211303-2686-4450-a605-2044fb1f4459)
+
+**Access point(Ap)**:- An on-gride point on the metal layer of the route guide, and is used to connect to lower-layer segments, upper-layer segments, pins or IO ports.
+
+**Access point cluster (APC)**:- A union of all access points derived from same lower-layer segment,upper-layer guide, a pin or an IO port.
+
+Here in the figure shown above, the illustration of access points:
+
+**(a)To a lower-layer segment**
+
+**(b)To a pin shape**
+
+**(c)To upper layer**
+
+Routing topology algorithm and final files list post-route
+
+
+![Screenshot 2024-12-23 005556](https://github.com/user-attachments/assets/b24ade1f-e1e0-4761-864a-15bd27b0d4d2)
+
+
+The algorithm requires the determination of the cost associated with each APC and the calculation of the minimum spanning tree between the APCs to find the optimal points between two APCs.
+
+The next step involves post-routing STA analysis, which requires the extraction of parasitic effects (SPEF).
+
+Since OpenLANE does not have a SPEF extraction tool, this process needs to be done outside of OpenLANE.
+
+The resulting .spef file can be located in the routing folder under the results folder.
+
+
+
+**References**
+Workshop Github material
+https://github.com/google/skywater-pdk
+https://github.com/nickson-jose/vsdstdcelldesign
+ttps://sourceforge.net/projects/ngspice/
+https://github.com/
+https://www.vlsisystemdesign.com/wp-content/uploads/2017/07/Introduction-to-Industrial-Physical-Design-Flow.pdf
