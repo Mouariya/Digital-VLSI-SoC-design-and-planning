@@ -1029,7 +1029,63 @@ The README.md file contains information about the parameters of the cell.
 **Setup timing analysis and introduction to flip-flop setup time**
 
 
+**Timing analysis (with ideal clock)**:- Let's start the setup analysis with the ideal clock(single clock). specifications of the clock is
+
+clock frequency =1 GHz
+
+clock period =1 ns
+
+Now will do the analysis between '0' and 'T' clock period. We sent at edge to the launch flop at '0' clock period and at T=1ns period the second edge reached to capture flop.
+
+Let's say here we have combinatonal delay of theta and set up timing analysis says that this combinational delay should be less than the T for system to work properly.
+
+
+![Screenshot 2024-12-22 130600](https://github.com/user-attachments/assets/ff76e1fa-22e9-4ba8-a9da-caa934e26a50)
+
+Now let's open the capture flop and we will see some combinational circuit there it has several MOSFETs , several logics,resistances and capacitances inside it.Also have the time graph for this particular flop
+
+
+
+![Screenshot 2024-12-22 131040](https://github.com/user-attachments/assets/9dd7e85e-68a4-4577-9f79-04f4400d382e)
+
+When there is logic '0' or logic '1' of clock 1 the delay of MUX1 and MUX2 will restrict or effect the combinational delay requirement.
+
+So there is some finite amount of time which is required to the D input to settle and this amount of time is reffered to as SET UP TIME.
+
+Hence finite time 's' required before clk edge for 'D' to reach Qm.
+
+So, we can write that the internal delay of the MUX1 = set up time(S).
+
+So, now θ<T becomes θ<(T-S).
+
 **Introduction to clock jitter and uncertainty**
+
+So in Jitter the clock is being created by PLL(phase-locked loops) and the clk source is expected to sent the clk signal at exactly 0,T,2T,....But that clk source might or might ot be able to generate the clk exactly at 0 or any other certain time because of it's inbuilt variations that is called jitter. Jitter is refered as temporary variation of the clk pulse.
+
+
+![Screenshot 2024-12-22 131450](https://github.com/user-attachments/assets/f0e86da7-ad8f-42dd-bc9f-dd30e4cc95e9)
+
+Let's consider this uncertantity time(US) in consideration. So, now equation will become θ<(T-S-US). Now assuming 'S'=0.01ns and 'US'=0.09ns. by taking this, Let's identify the timing path in our circuit stage 1 and stage 3 logic path has single clock.
+
+Now,we have to identify the combinational path delay for the both logics.
+
+
+Let's consider this uncertantity time(US) in consideration. So, now equation will become θ<(T-S-US). Now assuming 'S'=0.01ns and 'US'=0.09ns. by taking this, Let's identify the timing path in our circuit stage 1 and stage 3 logic path has single clock.
+
+Now,we have to identify the combinational path delay for the both logics.
+
+
+![Screenshot 2024-12-22 131827](https://github.com/user-attachments/assets/bd03ef9a-e93b-4c59-a965-73c1d36a40f4)
+
+
+
+
+![Screenshot 2024-12-22 132033](https://github.com/user-attachments/assets/b65f7d7f-5e64-464d-961d-152f590f3c56)
+
+
+
+![Screenshot 2024-12-22 132159](https://github.com/user-attachments/assets/f6a22cda-c62e-45c5-a1f5-095487252d5e)
+
 
 
 **Lab steps to configure OpenSTA for post-synth timing analysis**
