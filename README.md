@@ -968,6 +968,61 @@ Let's see what is inside spice file
 
  **Introduction to delay tables**
 
+ **Power Aware CTS**:- If we make enable pin at logic '1' in the AND gate, then clock will propagate and if we make it 'logic 0' it will block the clock. Similarly in 'OR' gate if we make enable as 'logic 0' it will propagate and on making it 'logic 1' it will block the clock.
+
+So the advantage of this blocking period is that we can save lot of power in clock tree.
+
+
+![Screenshot 2024-12-22 114835](https://github.com/user-attachments/assets/ff50a0d5-d94e-4ea4-bd7b-697b6959eb0b)
+
+
+
+Let's say we have a clock tree, The buffer present at the first input is driving the load of second two buffers. We have splited the buffer and in clock gating technique we have just swaped the buffer with and gate so now will all the other characteristic will be same or will get changed will see in coming steps.
+
+
+![Screenshot 2024-12-22 115242](https://github.com/user-attachments/assets/58bbdc70-2ebc-4f55-bc24-02b613910f20)
+
+Before swaping the buffer with gate we have made some assumptions which are follows
+
+
+![Screenshot 2024-12-22 115606](https://github.com/user-attachments/assets/a310ea26-f9b5-441e-bf21-deebfaff046f)
+
+**How delay tables are prepared?**
+
+For this purpose we have carried out the one buffer from the circuit and and seperately varying its input transition within some range of let's say 10ps-100ps than the output load will also vary so we willl characterise the delay and put the data in tabular format.
+
+
+
+![Screenshot 2024-12-22 120129](https://github.com/user-attachments/assets/4e96f064-5db4-45a0-878f-fee4bb440276)
+
+**Delay table usage Part 1**
+
+Let's take the example for other buffers.
+
+
+![Screenshot 2024-12-22 120802](https://github.com/user-attachments/assets/890f8398-ea21-43f6-9211-1b533d36894c)
+
+
+For practical example let's say we have the input transition of 40ps of buffer1 the output capacitance of this particular buffer is 60ff. The delay of the cell in this case is lies between x9-x10.
+
+So the values which are not available in the delay table those are extrapolated from the given data so we can take the range in that case.
+
+**Delay table usage Part 2**
+Now we have to calculate the delay of buffer 2 and after that we can find the latency at the 4 clock end points.
+
+Here input transition is common for both the buffers. now assuming that the transition is around the 60psec and load at both the buffers is 50fF. so it will give the delay of y15.
+
+The total delay from input to the output is= x9' + y15.(here we are ignoring the delay of the wires). that means the skew at the any output point is zero.
+
+If load is not same at the every nodes, the skew will not be the zero.
+
+**Lab steps to configure synthesis settings to fix slack and include vsdinv** 
+
+We will try to modify the parameters of our cell by referring the README.md file in the configuration folder in openlane directory
+
+The README.md file contains information about the parameters of the cell.
+
+
 
 ## (b)Timing analysis with ideal clocks using openSTA
 
