@@ -1263,7 +1263,7 @@ exit
 </a></li>
 	<ul>
 
- ## Routing and design rule check (DRC)
+ ## (a) Routing and design rule check (DRC)
 
  **Introduction to Maze Routing Ã�Â� LeeÃ�Â�s algorithm**
 
@@ -1304,5 +1304,82 @@ Now take one more example for routing, and will follow the exact same step as fo
 So in order to go to DRC we need to follow some steps which are called drc cleaning.
 
 Let's take the example of the above circuit. Let's we have two parallel wires so the rule says that whenever we choose two wires there should be minimum distance between these two wires.
+
+
+![Screenshot 2024-12-22 235307](https://github.com/user-attachments/assets/95376a6e-185e-486f-ac81-92b19785697d)
+
+Rule 1) Wire width:- Width of the wire should be minimum that derived from the optical wavelenth of lithography technique applied.
+
+![Screenshot 2024-12-22 235416](https://github.com/user-attachments/assets/667654ee-60dd-4ade-904c-fd5e3a7ea348)
+
+
+Rule 2) Wire Pitch:- The minimum pitch between two wire should be this much as shown in the figure below.
+
+
+
+![Screenshot 2024-12-22 235522](https://github.com/user-attachments/assets/71534fc2-a98b-4d5c-9bc1-582091a3c4ad)
+
+Rule 3) Wire Spacing:- The wire spacing between two wires should be as shown in the image below.
+
+
+
+![Screenshot 2024-12-22 235655](https://github.com/user-attachments/assets/69bef7e9-18c8-4546-bc70-924ddeaf7498)
+
+Let's take the other part for design rule check from the same example .
+
+
+
+
+
+
+![Screenshot 2024-12-22 235907](https://github.com/user-attachments/assets/08138624-6f2c-437c-9a3b-7b4e88ccb6df)
+
+
+Solution of this signal short problem is take one of the wire and put it on the other metal layer. usually upper metal is wider than the lower metal.
+
+
+
+
+![Screenshot 2024-12-23 000056](https://github.com/user-attachments/assets/ba2c90aa-9714-454e-872c-5dd40e01ed31)
+
+After this solution, we add two new DRC rules should be check.
+
+**Rule 1) Via Width** :- via width should be some minimum value.
+
+
+![Screenshot 2024-12-23 000217](https://github.com/user-attachments/assets/c0901e3b-f36b-4b1a-9fb2-a3c70d49ec0c)
+
+**Rule 2) Via Spacing** :- Via spacing should be minimum value.
+
+
+
+
+![Screenshot 2024-12-23 000359](https://github.com/user-attachments/assets/885e2cfa-0451-428f-b5b9-3e688996f41a)
+
+
+After routing and DRC the next step is Parasitic extraction. Resistance and capacitance present on every wire should be extracted and use for further process.
+
+
+![Screenshot 2024-12-23 000510](https://github.com/user-attachments/assets/1039619a-3766-4a04-b2f9-c52164accf73)
+
+## (b) Power Distribution Network and routing
+
+**Lab steps to build power distribution network** 
+Command for the previous terminal are given bellow
+
+docker
+
+./flow.tcl -interactive
+
+package require openlane 0.9
+
+prep -design picorv32a -tag 30-03)20-42
+
+echo $::env(CURRENT_DEF)
+
+So, till here we have done CTS and now we are going to do the routing. but before routing we have to generate the PDN(power distribution network)file by using the command.
+
+gen_pdn
+
 
 
