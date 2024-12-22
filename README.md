@@ -1222,6 +1222,39 @@ Let's identify the timing paths from design, with single clock
 
 **Lab steps to analyze timing with real clocks using OpenSTA**
 
+Lab steps to analyze timing with real clocks using OpenSTA
+Now we can execute the following commands,
 
+To load the created db file in Openroad
+
+read_db pico_cts.db
+
+To read the netlist post CTS
+
+read_verilog /openLANE_flow/designs/picorv32a/runs/02-04_05-27/results/synthesis/picorv32a.synthesis_cts.v
+
+To read the library for design
+
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+To link the design and library
+
+link_design picorv32a
+
+To read the custom sdc we have created
+
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+To setting all clocks as propagated clocks
+
+set_propagated_clock [all_clocks]
+
+To Generate the custom timing report
+
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+To exit from Openlane flow
+
+exit
  
 
