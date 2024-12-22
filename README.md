@@ -1503,3 +1503,10 @@ https://github.com/nickson-jose/vsdstdcelldesign
 ttps://sourceforge.net/projects/ngspice/
 https://github.com/
 https://www.vlsisystemdesign.com/wp-content/uploads/2017/07/Introduction-to-Industrial-Physical-Design-Flow.pdf
+
+
+# Acknowledgement
+
+ I would like to extend my deepest gratitude to the entire team at VLSI System Design (VSD) Corp. Pvt. Ltd. for their invaluable guidance and comprehensive explanations during the DIGITAL VLSI SoC Design and Planning workshop. Their dedication to providing clarity on even the finest details greatly enriched my learning experience.
+
+I would like to offer special thanks to Mr. Kunal Ghosh and Mr. Nickson Jose for their exceptional support, insights, and encouragement throughout the workshop. Their expertise and willingness to share knowledge played a crucial role in my understanding of the subject.
