@@ -1257,4 +1257,52 @@ To exit from Openlane flow
 
 exit
  
+<div class="toc">
+  <ul>
+    <li><a href="#header-1">Day 5 -Final step for RTL2GDS using tritinRoute and openSTA
+</a></li>
+	<ul>
+
+ ## Routing and design rule check (DRC)
+
+ **Introduction to Maze Routing Ã�Â� LeeÃ�Â�s algorithm**
+
+ **Routing**:- It is finding the best shortest possible connection between two end points with one point being the source and other point being the target and with less number of twist and turns.
+
+**Maze-Routing(Lee's Algorithm)**:- Therse should not be zig-zag lines of connections most of the connections should be in L shape or in Z shape. So according to algorithm first it create some grids and grids are routing at the backend. It's called as routing grid. There are some numbers of grids on this routig having some dimensions. SO here we are having two points one is 'Source' and the other is 'Target'. With the help of this routing grid algorithm has to find out the best possible way between them.
+
+First step is algorithm tries to lable all of the grids surrounded. Only the adjacent horizontal and vertical grids are labeled not the digonal one as shown in the image below.
+
+
+![Screenshot 2024-12-22 233721](https://github.com/user-attachments/assets/c8fa4c30-15ef-41d9-850e-2e503b44b48b)
+
+
+**LeeÃ�Â�s Algorithm conclusion**
+
+Now we will lable the grids to the next integer untill we reach to the target. In the example we reached the target after integer 9.
+
+![Screenshot 2024-12-22 234009](https://github.com/user-attachments/assets/069f46e8-7e7a-4d8a-b539-74873c848e3c)
+
+SO now there are so many ways to reach to target from source but we have to choose the best shortest possible way to reach the target.And we need to avoid the zig-zag way better to cghoose 'L' shape routing'
+
+
+
+
+![Screenshot 2024-12-22 234236](https://github.com/user-attachments/assets/3d47ff67-72df-42b1-9143-b0c754ece8f7)
+
+Now take one more example for routing, and will follow the exact same step as follows in the above example.
+
+
+
+![Screenshot 2024-12-22 234409](https://github.com/user-attachments/assets/53b21357-5560-4ffd-a741-97fa6767c2e5)
+
+
+
+![Screenshot 2024-12-22 234459](https://github.com/user-attachments/assets/049f8f68-cca8-417f-ae18-d0dceaf88c7e)
+
+## Design Rule Check
+So in order to go to DRC we need to follow some steps which are called drc cleaning.
+
+Let's take the example of the above circuit. Let's we have two parallel wires so the rule says that whenever we choose two wires there should be minimum distance between these two wires.
+
 
