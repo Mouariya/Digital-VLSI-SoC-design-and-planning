@@ -1098,8 +1098,60 @@ Now,we have to identify the combinational path delay for the both logics.
 
 **Clock tree routing and buffering using H-Tree algorithm**
 
+Clock tree synthesis:- Let's connect clk1 to FF1 & FF2 of stage 1 and FF1 of stage 3 and FF2 of stage 4 with physical wire.
+
+
+![Screenshot 2024-12-22 160547](https://github.com/user-attachments/assets/2cb9b678-6e43-48c0-b721-97a958594cd6)
+
+Now let's see what is the problem with this? Let's consider some physical distance from clk to FF1 and FF2 , so due to this t2>t1.
+
+Skew= t2-t1, and skew should be 0ps
+
+
+![Screenshot 2024-12-22 160639](https://github.com/user-attachments/assets/84c4b2af-3c4f-4b43-892a-f6d81fbf607d)
+
+Previously we have build bad tree now we will try to modify that in a smarter way. Hrre clk will come in somewhere mid points with this clk will reach to every flip flop at almost same time. In the same way we will connect the clk2 with flip flops like midpoint manner.
+
+
+
+![Screenshot 2024-12-22 160852](https://github.com/user-attachments/assets/cb6156d0-19b3-4028-88e8-8ac998d6e695)
+Now will se clock tree synthesis(Buffering), Let's we have some clock route through which it has to reach to particular locations and clock end points and in the path many capacitance, resitors are there.
+
+
+
+![Screenshot 2024-12-22 161121](https://github.com/user-attachments/assets/408ceb74-d44c-4615-9789-01a071e25173)
+
+Because of the wire length we did not get the same wave form at ouput as input and bcz of RC networks , so to resolve this problem we use repeaters. The only difference between the repeaters we use for clock or for data path is that clock repeaters repeaters will have equal rise and fall time.
+
+First step is we will remove the clock route and place 2 repeaters and allow the clock to go through this particular repeater, in this case whatever wave form is generated here will go to the output. So we can as many as repeaters we want to make the continuous flow of th clock till the output.
+
+
+
+
+![Screenshot 2024-12-22 161304](https://github.com/user-attachments/assets/04cb0e49-a3d6-431f-93fb-090d514de4a1)
+
+
 
 **Crosstalk and clock net shielding**
+**Clock Net Shielding** :- Till now we have built the clk tree in such a fashion that the skew between the launch flop and capture flop is 0. Skew means the latency difference between clk ports of the flop pins. Clk net shielding is the critical net scene in the design. We take the particular clk net and shield it means we protect the clk from the outside world, it's like house for tha clk.
+
+
+![Screenshot 2024-12-22 161640](https://github.com/user-attachments/assets/75a423a7-94d6-492c-87a3-0d79730721e8)
+
+If we do not protect the clk then two types of problem we can face Glitch and Delta delay
+
+Let's consider on of the clk net. So whenever there is switching activity happening at the aggraser because of the coupling capacitance between the wires and this capacitance is so strong that any activity happening at the aggraser will directly impact the net which is close.
+
+
+![Screenshot 2024-12-22 161857](https://github.com/user-attachments/assets/e2339ffc-3f9d-438e-83e1-4eb545992562)
+
+The shielding is the technique, by which we can protect the net from these problems. In a shielding, we put wire between the either two wire where coupling capacitance is generate. This extra wire is grounded or connected to VDD.
+
+We see the amount of delta delay because of the bump when we are switching from logic '1' to logic '0'. And skew is not anymore 0 here. So the impact of crosstalk delta delay is that it make the skew value non-zero.
+
+
+![Screenshot 2024-12-22 162112](https://github.com/user-attachments/assets/364d9845-c35d-4915-89c6-ce56bbde040c)
+
 
 
 **Lab steps to run CTS using Triton**
@@ -1112,7 +1164,60 @@ Now,we have to identify the combinational path delay for the both logics.
 
 **Setup timing analysis using real clocks**
 
+Circuit tree looks little bit different than ideal clock with real clock here we have buffers,wires etc Clock reach to launch flop and capture flop through a set of buffers.So clock signal will not reach to the buffer at t=0 time due to these buffers. So the combinational circuit equation will be (θ+1+2)<(T+1+3+4). Initially it was θ<T.
+
+
+![Screenshot 2024-12-22 163435](https://github.com/user-attachments/assets/eda86697-6956-4f76-9236-aa77ceec3015)
+
+Let's called "1+2"=∆1 and "1+3+4"=∆2 and (∆1-∆2)=skew
+
+
+![Screenshot 2024-12-22 164021](https://github.com/user-attachments/assets/bb500495-4bc8-4667-a9e8-ab3d103afce0)
+
+
+![Screenshot 2024-12-22 164143](https://github.com/user-attachments/assets/6b03c238-1912-475e-89f2-0ac6c32f84cd)
+
+And here also, we have to consider the propogation skew (s) and uncertainty delay (US). so final equaltion becomes like, (θ+∆1)<(T+∆2-S-US).
+
+we can also say that (θ+∆1)= data arrival time and (T+∆2-S-US)=data required time. If (Data required time)- (Data arrival time) = +ve then it is fine. If it is -Ve then it is called 'slack'.
+
+**Hold timing analysis**:- It is littel bit different then setup timing analysis. here we are sending the first pulse to the both launch FLop and capture flop.
+
+Hold condition state that, Hold time (H)< combinational delay (θ). So, (θ>H). And for real clock Hold time (H)< combinational delay (θ). So, (θ+1+2>H+1+3+4)
+
+
+
+
+![Screenshot 2024-12-22 164745](https://github.com/user-attachments/assets/b676371c-b59f-408f-94be-384bfc1caf73)
+
+
+
+
+
+
 **Hold timing analysis using real clocks**
+
+Combinational delay should be grater then the hold time of the capture flip flop. Once the clk reaches the launch flop it takes ariund 2buffer delay(∆1) and when it reaches to the capture flip flop it takes around 3 buffer delay(∆2). Uncertainity will be same for both the flip flops becaiuse clock applied to both the flops from the same edge only. Now let's add the uncertainity value to it.
+
+
+
+![Screenshot 2024-12-22 215742](https://github.com/user-attachments/assets/a2e26680-cc44-4219-b5b5-33a54a16ff32)
+
+Let's identify the timing paths from design, with single clock
+
+
+![Screenshot 2024-12-22 221827](https://github.com/user-attachments/assets/da11b9de-cabe-406e-80b5-78bc0473181b)
+
+
+
+![Screenshot 2024-12-22 222013](https://github.com/user-attachments/assets/7faf4e17-621d-4286-83bd-c7e2998c6d6e)
+
+
+![Screenshot 2024-12-22 222123](https://github.com/user-attachments/assets/7a4c38ec-7730-4480-87ca-a0e5d51983ee)
+
+
+![Screenshot 2024-12-22 222158](https://github.com/user-attachments/assets/09c8e210-f19a-459f-a993-2ea5077b3917)
+
 
 
 **Lab steps to analyze timing with real clocks using OpenSTA**
